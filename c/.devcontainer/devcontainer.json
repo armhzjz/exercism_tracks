@@ -6,7 +6,7 @@
     // See: https://github.com/microsoft/vscode-remote-release/issues/3545
     // Workaround: build the image on the host before asking vscode to build it so that it is re-used
     // "initializeCommand":
-    //     "DOCKER_BUILDKIT=1 docker build --progress=plain --network host --build-arg USER=exercismc --secret id=token,src=${localEnv:HOME}/.config/exercism/user.json --tag devel-c:bullseye .devcontainer/",
+    //     "DOCKER_BUILDKIT=1 docker build --progress=plain --network host --build-arg USER=exercismC --secret id=token,src=${localEnv:HOME}/.config/exercism/user.json --tag devel-c:bullseye .devcontainer/",
 
     // "build": {
     //     "dockerfile": "Dockerfile",

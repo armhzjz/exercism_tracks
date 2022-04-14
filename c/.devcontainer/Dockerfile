@@ -3,10 +3,12 @@ FROM    gcc:bullseye
 
 # Create a non-root user
 ARG     USER
+ARG     UID
+ARG     GID
 ARG     USERNAME=${USER}
 ARG     GROUPNAME=${USERNAME}
-ARG     USER_UID=1000
-ARG     USER_GID=1000
+ARG     USER_UID=${UID}
+ARG     USER_GID=${GID}
 RUN     set -x && \
         groupadd \
                 --gid ${USER_GID} \
@@ -62,7 +64,7 @@ RUN     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 RUN     cd ~/.fzf && ./install
 
 # Install exercism
-#  First change to bash shell to be albot to echo multiline content
+#  First change to bash shell to be able to echo multiline content
 #  into a file
 ADD --chown=$USERNAME:$USERNAME https://github.com/exercism/cli/releases/download/v3.0.13/exercism-3.0.13-linux-x86_64.tar.gz /home/$USERNAME/bin/
 SHELL ["/bin/bash", "-c"]
