@@ -78,7 +78,7 @@ RUN     set -x && \
         :
 # configure the exercism client with the retrieved token
 RUN     --mount=type=secret,id=token,required=true export TOKEN=$(sudo cat /run/secrets/token | grep -Po '(?<=token": ").+(?=")') && \
-        /home/$USERNAME/bin/exercism configure --token=$TOKEN --workspace=/workspaces
+        /home/$USERNAME/bin/exercism configure --token=$TOKEN --workspace=/workspaces/exercism
 # set bash completion file for exercism
 RUN     set -x && \
         mv /home/$USERNAME/bin/shell/exercism_completion.bash /home/$USERNAME/.config/exercism/exercism_completion.bash && \
