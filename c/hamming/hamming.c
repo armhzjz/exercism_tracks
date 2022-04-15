@@ -5,16 +5,11 @@ int compute(const char *lhs, const char *rhs) {
     /* counter or hamming distance */
     unsigned int distance = 0;
 
-    if(strlen(lhs) != strlen(rhs)) {
-        /* length of strands are not equal */
-        return -1;
-    } else {
-        for(unsigned int i = 0; i < strlen(lhs); i++) {
-            if(lhs[i] != rhs[i]) {
+    for(; *lhs && *rhs; lhs++, rhs++) {
+            if(*lhs != *rhs) {
                 ++ distance;
             }
         }
-    }
 
-    return distance;
+    return (*lhs || *rhs) ? (unsigned int) -1 : distance;
 }
