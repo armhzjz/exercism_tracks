@@ -58,10 +58,10 @@ bool add_student(roster_t *roster, const char *name, uint8_t grade) {
                 if grade is bigger han student[i].grade
                     break;
                 if grade is less than student[i].grade
-                    shift and insert
+                    shift and insert (this function checks for duplicity of names)
                 if grade is i
                     if name is less than name student[i].grade
-                        shift and insert
+                        shift and insert (this function checks for duplicity of names)
                     else if name is bigger than name student[i].grade
                         break
                     else if name is name
