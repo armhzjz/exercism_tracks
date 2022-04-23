@@ -2,12 +2,11 @@
 #include <stdlib.h>
 #include "grade_school.h"
 
-
 bool insert_name(char *, const char *);
 bool shift_and_insert(student_t *, uint8_t, const char *, long unsigned int, long unsigned int *);
 
 
-bool insert_name(char * dest, const char *orig) {
+bool insert_name(char *dest, const char *orig) {
     if(!dest || !orig)
         return false;
 
@@ -22,14 +21,6 @@ bool shift_and_insert(student_t *students, uint8_t grade, const char *name, long
     if(!students || !name || !total_students_n)
         return false;
 
-    /* first check if name is already on this roster */
-    student_t *aux_students = students;
-    for(;aux_students->name[0] != '\0'; aux_students++) {
-        if(!strcmp(aux_students->name, name))
-            /* the name is already on this roster */
-            return false;
-
-    }
     memmove((void *)&students[idx + 1], (const void *)&students[idx], (*total_students_n - idx) * sizeof(student_t)/sizeof(char));
     *total_students_n = *total_students_n + 1;
     students[idx].grade = grade;
@@ -52,7 +43,15 @@ bool add_student(roster_t *roster, const char *name, uint8_t grade) {
     if(!roster || !name)
         return false;
 
-    if(roster->count < MAX_STUDENTS-1)
+    if(roster->count < MAX_STUDENTS-1) {
+        /* first check if name is already on this roster */
+        student_t *aux_students = roster->students;
+        for(;aux_students->name[0] != '\0'; aux_students++) {
+            if(!strcmp(aux_students->name, name))
+                /* the name is already on this roster */
+                return false;
+
+        }
         for(long unsigned int idx = 0; idx <= roster->count; idx++) {
             /* Pseudo code
                 if grade is bigger han student[i].grade
@@ -82,6 +81,7 @@ bool add_student(roster_t *roster, const char *name, uint8_t grade) {
                         return false;
             }
         }
+    }
 
     return false;
 }
