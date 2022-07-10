@@ -60,6 +60,8 @@
         "github.remotehub",
         "eamodio.gitlens",
         "oderwat.indent-rainbow",
-        "ms-vscode.cpptools-extension-pack"
+        "ms-vscode.cpptools-extension-pack",
+        "vadimcn.vscode-lldb",
+        "ms-vscode.hexeditor"
     ],
 }
