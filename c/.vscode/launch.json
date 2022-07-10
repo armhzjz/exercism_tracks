@@ -4,7 +4,7 @@
         "name": "(gdb) Launch",
         "type": "cppdbg",
         "request": "launch",
-        "program": "${workspaceFolder}/sieve/sieve",
+        "program": "${workspaceFolder}/robot-simulator/robot",
         "args": [],
         "stopAtEntry": true,
         "cwd": "${fileDirname}",
