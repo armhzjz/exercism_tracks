@@ -31,12 +31,10 @@ void robot_move(robot_status_t *robot, const char *commands) {
                 commands++;
                 break;
             case 'A':
-                if (new_dir & 0b1)
-                    robot->position.x += (new_dir & 0b10) ? -1 : 1;
-                else if (new_dir & 0b10)
-                    robot->position.y -=  1;
+                if (new_dir % 2)
+                    robot->position.x += 2 - new_dir;
                 else
-                    robot->position.y += 1;
+                    robot->position.y += 1 - new_dir;
                 commands++;
                 break;
             }
