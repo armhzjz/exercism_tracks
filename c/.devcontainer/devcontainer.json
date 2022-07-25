@@ -31,8 +31,10 @@
     "mounts": [
         "source=${localEnv:HOME}/.gitconfig,target=/home/exercismc/.gitconfig,type=bind",
         "source=${localEnv:HOME}/.ssh/,target=/home/exercismc/.ssh/,type=bind",
-        "source=${localEnv:HOME}/.wakatime.cfg,target=/home/pythonist/.wakatime.cfg,type=bind",
-        "source=${localEnv:HOME}/.wakatime/,target=/home/pythonist/.wakatime/,type=bind",
+        "source=${localEnv:HOME}/.wakatime.cfg,target=/home/exercismc/.wakatime.cfg,type=bind",
+        "source=${localEnv:HOME}/.wakatime.bdb,target=/home/exercismc/.wakatime.bdb,type=bind",
+        "source=${localEnv:HOME}/.wakatime.log,target=/home/exercismc/.wakatime.log,type=bind",
+        "source=${localEnv:HOME}/.wakatime/,target=/home/exercismc/.wakatime/,type=bind",
         //"source=${localEnv:HOME}/.config/exercism/,target=/home/exercismc/.config/exercism/,type=bind",
     ],
 
