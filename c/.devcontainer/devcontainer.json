@@ -31,6 +31,8 @@
     "mounts": [
         "source=${localEnv:HOME}/.gitconfig,target=/home/exercismc/.gitconfig,type=bind",
         "source=${localEnv:HOME}/.ssh/,target=/home/exercismc/.ssh/,type=bind",
+        "source=${localEnv:HOME}/.wakatime.cfg,target=/home/pythonist/.wakatime.cfg,type=bind",
+        "source=${localEnv:HOME}/.wakatime/,target=/home/pythonist/.wakatime/,type=bind",
         //"source=${localEnv:HOME}/.config/exercism/,target=/home/exercismc/.config/exercism/,type=bind",
     ],
 
@@ -62,6 +64,7 @@
         "oderwat.indent-rainbow",
         "ms-vscode.cpptools-extension-pack",
         "vadimcn.vscode-lldb",
-        "ms-vscode.hexeditor"
+        "ms-vscode.hexeditor",
+        "wakatime.vscode-wakatime"
     ],
 }
