@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "compare": "c"
+        "compare": "c",
+        "palindrome_products.h": "c",
+        "ctype.h": "c"
     }
 }
