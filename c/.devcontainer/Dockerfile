@@ -48,6 +48,7 @@ RUN     set -x && \
                 tar \
                 bsdmainutils \
                 nasm \
+                bc \
                 && \
         sudo --preserve-env apt clean && \
         sudo rm -fr /var/lib/apt/lists/* && \
