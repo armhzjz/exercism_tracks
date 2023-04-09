@@ -11,4 +11,4 @@ DOCKER_BUILDKIT=1 docker build --network host \
     --build-arg USER=$USERNAME \
     --build-arg UID=$(id -u) \
     --build-arg GID=$(id -g) \
-    --secret id=token,src=$HOME/.config/exercism/user.json --tag devel-c:bullseye .
+    --secret id=token,src=$HOME/.config/exercism/user.json --tag devel-c:12.2.0 .

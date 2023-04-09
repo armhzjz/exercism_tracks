@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.2
-FROM    gcc:bullseye
+FROM    gcc:12.2.0
 
 # Create a non-root user
 ARG     USER
@@ -43,6 +43,7 @@ ENV     LANGUAGE en_US:en
 ENV     LC_ALL en_US.UTF-8
 # Switch to the non-root user
 USER    ${USERNAME}
+WORKDIR /workspaces/exercism/c
 # Install stuff...
 RUN     set -x && \
         sudo --preserve-env apt update && \
