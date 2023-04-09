@@ -27,12 +27,12 @@
 
     // Volumes to mount when running the container
     "mounts": [
-        "source=${localEnv:HOME}/.gitconfig,target=/home/exercismc/.gitconfig,type=bind",
-        "source=${localEnv:HOME}/.ssh/,target=/home/exercismc/.ssh/,type=bind",
-        "source=${localEnv:HOME}/.wakatime.cfg,target=/home/exercismc/.wakatime.cfg,type=bind",
-        "source=${localEnv:HOME}/.wakatime.bdb,target=/home/exercismc/.wakatime.bdb,type=bind",
-        "source=${localEnv:HOME}/.wakatime.log,target=/home/exercismc/.wakatime.log,type=bind",
-        "source=${localEnv:HOME}/.wakatime/,target=/home/exercismc/.wakatime/,type=bind",
+        "source=${localEnv:HOME}/.gitconfig,target=/home/dev-c/.gitconfig,type=bind",
+        "source=${localEnv:HOME}/.ssh/,target=/home/dev-c/.ssh/,type=bind",
+        "source=${localEnv:HOME}/.wakatime.cfg,target=/home/dev-c/.wakatime.cfg,type=bind",
+        "source=${localEnv:HOME}/.wakatime.bdb,target=/home/dev-c/.wakatime.bdb,type=bind",
+        "source=${localEnv:HOME}/.wakatime.log,target=/home/dev-c/.wakatime.log,type=bind",
+        "source=${localEnv:HOME}/.wakatime/,target=/home/dev-c/.wakatime/,type=bind",
         "source=${localWorkspaceFolder}/../,target=/workspaces/exercism/,type=bind"
     ],
 
