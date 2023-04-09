@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  devcont:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USER: ${CONTAINER_USER}
+        UID: ${UID}
+        GID: ${GID}
+      secrets:
+        - token
+    image: devel-python:3.11.3
+    user: ${CONTAINER_USER}
+    network_mode: "host"
+secrets:
+  token:
+    file: /home/eindemwort/.config/exercism/user.json
+# need to run first:
+#   if building out of vscode: "XYZVAR=$(dirname ${PWD}); printf "CONTAINER_USER=dev-%s\nUID=%s\nGID=%s\n" ${XYZVAR##*/} $(id -u) $(id -g) > .env"
+#   if building in vscode "printf "CONTAINER_USER=dev-%s\nUID=%s\nGID=%s\n" ${name} $(id -u) $(id -g) > .env"

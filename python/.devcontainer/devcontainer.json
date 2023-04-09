@@ -1,0 +1,68 @@
+// For format details, see https://aka.ms/devcontainer.jsondev-python
+{
+    "name": "${localWorkspaceFolderBasename}",
+
+    "initializeCommand":
+        "printf \"CONTAINER_USER=dev-%s\nUID=%s\nGID=%s\n\" ${localWorkspaceFolderBasename} $(id -u) $(id -g) > .devcontainer/.env",
+
+   // Update the 'dockerComposeFile' list if you have more compose files or use different names.
+	"dockerComposeFile": "docker-compose.yml",
+
+	// The 'service' property is the name of the service for the container that VS Code should
+	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
+	"service": "devcont",
+    // Tells devcontainer.json supporting services or tools whether they should run
+    // /bin/sh -c "while sleep 1000; do :; done" when starting the container instead of the
+    // container’s default command (since the container can shut down if the default command fails).
+    "overrideCommand": true,
+
+    // "workspaceMount": "source=${localWorkspaceFolderBasename},target=/workspaces,type=bind,consistency=cached",
+
+    // // The 'workspaceFolder' property is the path VS Code should open by default when
+	// // connected. Corresponds to a volume mount in .devcontainer/docker-compose.yml
+	"workspaceFolder": "/workspaces/exercism/python",
+
+    // Environment variables to set in the container
+    "containerEnv": {},
+
+    // Volumes to mount when running the container
+    "mounts": [
+        "source=${localEnv:HOME}/.gitconfig,target=/home/dev-python/.gitconfig,type=bind",
+        "source=${localEnv:HOME}/.ssh/,target=/home/dev-python/.ssh/,type=bind",
+        "source=${localEnv:HOME}/.wakatime.cfg,target=/home/dev-python/.wakatime.cfg,type=bind",
+        "source=${localEnv:HOME}/.wakatime.bdb,target=/home/dev-python/.wakatime.bdb,type=bind",
+        "source=${localEnv:HOME}/.wakatime.log,target=/home/dev-python/.wakatime.log,type=bind",
+        "source=${localEnv:HOME}/.wakatime/,target=/home/dev-python/.wakatime/,type=bind",
+        "source=${localWorkspaceFolder}/../,target=/workspaces/exercism/,type=bind"
+    ],
+
+    "customizations": {
+        "vscode": {
+            // Set *default* container specific settings.json values on container create.
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "bash",
+                        "icon": "terminal-bash"
+                    }
+                },
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+            // Add the IDs of extensions you want installed when the container is created.
+            "extensions": [
+                "ms-vscode-remote.remote-ssh",
+                "coenraads.bracket-pair-colorizer-2",
+                "mhutchie.git-graph",
+                "github.remotehub",
+                "eamodio.gitlens",
+                "oderwat.indent-rainbow",
+                "ms-vscode.hexeditor",
+                "wakatime.vscode-wakatime",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+
+    // Uncomment the next line to use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "rm .devcontainer/.env"
+}
