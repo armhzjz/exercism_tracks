@@ -1,2 +1,4 @@
 .exercism/
 *.out
+.vscode/
+.vscode/*
