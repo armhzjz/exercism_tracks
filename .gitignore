@@ -1,4 +1,4 @@
 .exercism/
 *.out
-.vscode/
-.vscode/*
+./c/.vscode/
+./c/.vscode/*
