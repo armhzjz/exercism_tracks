@@ -1,6 +1,6 @@
 .exercism/
 *.out
-./c/.vscode/
-./c/.vscode/*
+.vscode/
+.vscode/*
 .venv
 .env
