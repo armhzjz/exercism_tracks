@@ -2,3 +2,5 @@
 *.out
 ./c/.vscode/
 ./c/.vscode/*
+.venv
+.env
