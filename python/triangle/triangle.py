@@ -1,6 +1,6 @@
 """ Functiosn to determine the type of triangle given its sides """
 
-
+# pylint: disable=invalid-name
 def equilateral(sides:tuple) -> bool:
     """ Determine if a triangle is equilateral
     
@@ -38,6 +38,3 @@ def scalene(sides:tuple) -> bool:
     """
     a,b,c = sides
     return bool(a != b and b != c and c != a and 0 != a * b * c and a+b >= c and b+c >= a and c+a >= b)
-
-def sum(a,b):
-    return a+b
